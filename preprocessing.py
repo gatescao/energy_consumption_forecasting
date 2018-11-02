@@ -2,6 +2,17 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 
+def get_static_features(df):
+    df['timestamp'] = pd.to_datetime(df.Timestamp)
+    df['date'] = df['timestamp'].dt.date
+    df['woy'] = df['date'].dt.weekofyear
+    df['dow'] = df['date'].dt.dayofweek
+    df['year'] = df['date'].dt.year
+    df['month'] = df['date'].dt.month
+    df['day'] = df['date'].dt.day
+
+    return df
+
 def split_sequence(sequences, cold_start_window, pred_window, features):
     """
     Split a multivariate series into training samples
