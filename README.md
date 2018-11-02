@@ -1,3 +1,3 @@
 # energy_consumption_forecasting
 
-Power Laws: Cold Start Energy Forecasting competition on DrivenData.org
+My solution to the Power Laws: Cold Start Energy Forecasting competition on DrivenData.org
